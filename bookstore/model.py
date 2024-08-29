@@ -10,17 +10,17 @@ class Transaction:
     SUPPLY = 2
 
     def __init__(self, type: int, copies: int):
-        self.type = type
-        self.copies = copies
+        self.type: int = type
+        self.copies: int = copies
         self.date = datetime.datetime.now()
 
 class Book:
     def __init__(self, isbn: str, title: str, sale_price: float, purchase_price: float, quantity: int):
-        self.isbn = isbn
-        self.title = title
-        self.sale_price = sale_price
-        self.purchase_price = purchase_price
-        self.quantity = quantity
+        self.isbn: str = isbn
+        self.title: str = title
+        self.sale_price: float = sale_price
+        self.purchase_price: float = purchase_price
+        self.quantity: int = quantity
         self.transactions = []
 
     def sell(self, copies: int) -> bool:
@@ -38,7 +38,7 @@ class Book:
         return sum(transaction.copies for transaction in self.transactions if transaction.type == Transaction.SELL)
 
     def __str__(self) -> str:
-        return f"ISBN: {self.isbn}\nTitle: {self.title}\nSale Price: {self.sale_price:.1f}\nPurchase Price: {self.purchase_price}\nQuantity: {self.quantity}"
+        return f"ISBN: {self.isbn}\nTitle: {self.title}\nSale Price: {self.sale_price}\nPurchase Price: {self.purchase_price}\nQuantity: {self.quantity}"
 
 class Bookstore:
     def __init__(self):
