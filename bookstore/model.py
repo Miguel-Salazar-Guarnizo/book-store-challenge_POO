@@ -38,7 +38,7 @@ class Book:
         return sum(transaction.copies for transaction in self.transactions if transaction.type == Transaction.SELL)
 
     def __str__(self) -> str:
-        return f"ISBN: {self.isbn}\nTitle: {self.title}\nSale price: {self.sale_price}\nPurchase price: {self.purchase_price}\nQuantity: {self.quantity}"
+        return f"ISBN: {self.isbn}\nTitle: {self.title}\nSale Price: {self.sale_price:.1f}\nPurchase Price: {self.purchase_price}\nQuantity: {self.quantity}"
 
 class Bookstore:
     def __init__(self):
